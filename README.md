@@ -21,3 +21,8 @@ To run your tests
 ### 401 Data Structures, Code Challenges
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+### Tabel of contact
+| #      | Table of Contents 
+| :---        |    :----:
+| 1|[reversArray](./javascript/code-challenges/array-reverse/array-reverse.md) 
+| 2|[array-insert-shift](./javascript/code-challenges/array-insert-shift/array-insert-shift.md) 
