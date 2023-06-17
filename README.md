@@ -26,3 +26,4 @@ To run your tests
 | :---        |    :----:
 | 1|[reversArray](./javascript/code-challenges/array-reverse/array-reverse.md) 
 | 2|[array-insert-shift](./javascript/code-challenges/array-insert-shift/array-insert-shift.md) 
+| 3|[LinkedList](./javascript/code-challenges/linked-list/readme.md) 
