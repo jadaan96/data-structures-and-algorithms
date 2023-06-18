@@ -5,20 +5,14 @@ class LinkedList {
       this.head = null;
     }
   
-    append(val) {
-      const node = new Node(val)
-      // console.log(node)
-      if(!this.head) {
-        this.head = node;
-        return this;
+    insert(value) {
+      const newNode = new Node(value);
+      if (this.head === null) {
+        this.head = newNode;
+      } else {
+        newNode.next = this.head;
+        this.head = newNode;
       }
-      let currentNode = this.head;
-      while(currentNode.next) {
-        currentNode = currentNode.next;
-      }
-      currentNode.next = node;
-      return this;
-  
     }
     contains(val) {
         let currentNode = this.head;
@@ -47,9 +41,9 @@ class LinkedList {
 const newList = new LinkedList();
 
 // console.log(newList)
-newList.append(15)
-newList.append(10)
-newList.append(5)
+newList.insert(15)
+newList.insert(10)
+newList.insert(5)
 
 const values = newList.getValues();
 console.log(values);
