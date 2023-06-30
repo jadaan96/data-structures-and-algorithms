@@ -1,5 +1,7 @@
 ### Code Challenge: Class 06
 [pull request](https://github.com/jadaan96/data-structures-and-algorithms/pull/8)
+
+
 [action](https://github.com/jadaan96/data-structures-and-algorithms/actions)
 
 Extend a Linked List to allow various insertion methods.
@@ -24,6 +26,8 @@ Space Complexity: O(1) - The space complexity is constant since we only allocate
 
 ### Code Challenge: Class 07
 [pull request](https://github.com/jadaan96/data-structures-and-algorithms/pull/9)
+
+
 [action](https://github.com/jadaan96/data-structures-and-algorithms/actions)
 
 
