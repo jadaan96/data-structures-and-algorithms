@@ -69,6 +69,33 @@ class Node {
       // No node with the specified value found, raise an exception
       throw new Error(`Node with value ${value} not found.`);
     }
+
+    kthFromEnd(k) {
+      if (k < 0) {
+        throw new Error("Invalid value for k. k must be a non-negative integer.");
+      }
+  
+      let slow = this.head;
+      let fast = this.head;
+  
+      for (let i = 0; i < k; i++) {
+        if (fast === null) {
+          throw new Error(`k is greater than the length of the linked list.`);
+        }
+        fast = fast.next;
+      }
+  
+      while (fast.next !== null) {
+        slow = slow.next;
+        fast = fast.next;
+      }
+  
+      if (slow === null) {
+        throw new Error(`k is greater than the length of the linked list.`);
+      }
+  
+      return slow.value;
+    }
   }
   
   module.exports = LinkedList;
