@@ -10,6 +10,11 @@ class Node {
       this.head = null;
     }
   
+    insert(value) {
+      let node = new Node(value);
+      node.next = this.head;
+      this.head = node;
+    }
     append(newValue) {
       const newNode = new Node(newValue);
       if (!this.head) {
@@ -71,30 +76,23 @@ class Node {
     }
 
     kthFromEnd(k) {
-      if (k < 0) {
-        throw new Error("Invalid value for k. k must be a non-negative integer.");
+      if (!this.head || k <= 0) {
+        return null;
       }
-  
-      let slow = this.head;
-      let fast = this.head;
-  
+      let current = this.head;
+      let currentTwo = this.head;
       for (let i = 0; i < k; i++) {
-        if (fast === null) {
-          throw new Error(`k is greater than the length of the linked list.`);
+        if (current) {
+          current = current.next;
+        } else {
+          return null;
         }
-        fast = fast.next;
       }
-  
-      while (fast.next !== null) {
-        slow = slow.next;
-        fast = fast.next;
+      while (current) {
+        currentTwo = currentTwo.next;
+        current = current.next;
       }
-  
-      if (slow === null) {
-        throw new Error(`k is greater than the length of the linked list.`);
-      }
-  
-      return slow.value;
+      return currentTwo.data;
     }
   }
   
