@@ -25,7 +25,7 @@ Space Complexity: O(1) - The space complexity is constant since we only allocate
 
 
 ### Code Challenge: Class 07
-[pull request](https://github.com/jadaan96/data-structures-and-algorithms/pull/9)
+[pull request](https://github.com/jadaan96/data-structures-and-algorithms/pull/11)
 
 
 [action](https://github.com/jadaan96/data-structures-and-algorithms/actions)
