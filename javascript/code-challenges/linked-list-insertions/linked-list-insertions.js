@@ -75,25 +75,34 @@ class Node {
       throw new Error(`Node with value ${value} not found.`);
     }
 
-    kthFromEnd(k) {
-      if (!this.head || k <= 0) {
-        return null;
-      }
-      let current = this.head;
-      let currentTwo = this.head;
-      for (let i = 0; i < k; i++) {
-        if (current) {
-          current = current.next;
-        } else {
-          return null;
+      kthFromEnd(k){
+        let obj = {};
+        let index = 0;
+        let currNode = this.head;
+        while (currNode !== null) {
+          obj[index] = currNode.value;
+          currNode = currNode.next;
+          index += 1;
         }
+        console.log(obj);
+    
+        index = 0;
+        let value;
+        const reversedKeys = Object.keys(obj).reverse();
+    
+        if(k >= reversedKeys.length){
+          return ('Linked-list index is out of range.');
+        }
+    
+        reversedKeys.forEach(key => {
+          if(index === k){
+            value = (obj[key]);
+          }
+          index += 1;
+        });
+    
+        return value;
       }
-      while (current) {
-        currentTwo = currentTwo.next;
-        current = current.next;
-      }
-      return currentTwo.data;
-    }
   }
   
   module.exports = LinkedList;
