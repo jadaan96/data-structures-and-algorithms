@@ -10,6 +10,11 @@ class Node {
       this.head = null;
     }
   
+    insert(value) {
+      let node = new Node(value);
+      node.next = this.head;
+      this.head = node;
+    }
     append(newValue) {
       const newNode = new Node(newValue);
       if (!this.head) {
@@ -69,6 +74,35 @@ class Node {
       // No node with the specified value found, raise an exception
       throw new Error(`Node with value ${value} not found.`);
     }
+
+      kthFromEnd(k){
+        let obj = {};
+        let index = 0;
+        let currNode = this.head;
+        while (currNode !== null) {
+          obj[index] = currNode.value;
+          currNode = currNode.next;
+          index += 1;
+        }
+        console.log(obj);
+    
+        index = 0;
+        let value;
+        const reversedKeys = Object.keys(obj).reverse();
+    
+        if(k >= reversedKeys.length){
+          return ('Linked-list index is out of range.');
+        }
+    
+        reversedKeys.forEach(key => {
+          if(index === k){
+            value = (obj[key]);
+          }
+          index += 1;
+        });
+    
+        return value;
+      }
   }
   
   module.exports = LinkedList;

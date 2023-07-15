@@ -23,7 +23,8 @@ Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 const getNames = (arr) => {
   return arr.map(person => person.name.split('').reverse().join(''));
-};
+=======
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -34,6 +35,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 const appendTheEnd = (str) => {
   return str + ' The end.';
 };
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -49,6 +51,9 @@ console.log(a) prints [1, 2, 3, 1]
 const appendFirstToLast = (arr) => {
   arr.push(arr[0]);
 };
+
+
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -66,7 +71,8 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 const addBirthYearProperty = (obj, year) => {
   obj['yearBorn'] = year;
 };
-/* ------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
 
 Write a function that accepts an array of people objects and adds a new property called isAuthor to each object in the list. Set the value of the new property to true.
@@ -83,7 +89,7 @@ const setStatusAsAuthor = (people) => {
     person.isAuthor = true;
   }
 };
-/* ------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
 
 Write a function that accepts two arrays. Append the values from the second array into the first,
@@ -102,7 +108,7 @@ const append = (arr1, arr2) => {
     arr1.push(val);
   }
 };
-/* ------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 TESTS
 
 All the code below will verify that your functions are working to solve the challenges.
@@ -149,6 +155,8 @@ describe('Testing challenge 4', () => {
 });
 
 describe('Testing challenge 5', () => {
+=======
+
   test('It should add a property to every object in an array', () => {
     const a = [{ fullName: 'Octavia Butler' }, { fullName: 'Ray Bradbury' }, { fullName: 'Kurt Vonnegut' }];
     setStatusAsAuthor(a);
@@ -160,6 +168,7 @@ describe('Testing challenge 5', () => {
 });
 
 describe('Testing challenge 6', () => {
+
   test('It should append the second array to the first', () => {
     const a = [1, 2, 3, 4];
     const b = [5, 6, 7, 8];
@@ -168,3 +177,4 @@ describe('Testing challenge 6', () => {
     expect(a).toStrictEqual([1, 2, 3, 4, 5, 6, 7, 8]);
   });
 });
+
