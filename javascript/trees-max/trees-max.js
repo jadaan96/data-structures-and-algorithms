@@ -20,13 +20,37 @@ class BinaryTree {
           }
           if(node.left !== null) {
             traverse(node.left);
-          }a
+          }
           if(node.right !== null) {
             traverse(node.right);
           }
         };
         traverse(node);
         return currentMax;
+  
+    }
+
+    breadthFirst(){
+
+        if (!this.root) {
+          return []; 
+        }
+    
+        let arr = [];
+        let currentLevel = [this.root];
+    
+        while (currentLevel.length > 0) {
+          let nextLevel = [];
+          for (let i = 0; i < currentLevel.length; i++) {
+            const node = currentLevel[i];
+            arr.push(node.value);
+            if (node.left) nextLevel.push(node.left);
+            if (node.right) nextLevel.push(node.right);
+          }
+          currentLevel = nextLevel;
+        }
+    
+        return arr;
   
     }
   }
@@ -39,6 +63,9 @@ tree.root.left.left = new Node(3);
 tree.root.left.right = new Node(7);
 tree.root.right.left = new Node(30);
 tree.root.right.right = new Node(20);
+
+const breadthFirstOutput = tree.breadthFirst();
+console.log("breadthFirst() method output:", breadthFirstOutput);
 
 console.log(tree.findMaxValue());
   module.exports = {
