@@ -53,7 +53,43 @@ class BinaryTree {
         return arr;
   
     }
+    
+    fizzBuzzTree(){
+
+      if (!this.root) {
+        return []; 
+      }
+  
+      let newArray = [];
+      let currentLevel = [this.root];
+  
+      while (currentLevel.length > 0) {
+        let nextLevel = [];
+        for (let i = 0; i < currentLevel.length; i++) {
+          const node = currentLevel[i];
+          if (node.value % 3 === 0 && node.value % 5 === 0) {
+            node.value = 'FizzBuzz';
+          } else if (node.value % 3 === 0) {
+            node.value = 'Fizz';
+          } else if (node.value % 5 === 0) {
+            node.value = 'Buzz';
+          } else {
+            node.value = `${node.value}`;
+          }
+      
+          newArray.push(node.value);
+
+          if (node.left) nextLevel.push(node.left);
+          if (node.right) nextLevel.push(node.right);
+        }
+        currentLevel = nextLevel;
+      }
+  
+      return newArray;
+
   }
+  }
+  
   
   const tree = new BinaryTree();
 tree.root = new Node(10);
@@ -66,8 +102,9 @@ tree.root.right.right = new Node(20);
 
 const breadthFirstOutput = tree.breadthFirst();
 console.log("breadthFirst() method output:", breadthFirstOutput);
-
-console.log(tree.findMaxValue());
+const fizz = tree.fizzBuzzTree();
+console.log("fizz() method output:", fizz);
+console.log(tree,);
   module.exports = {
     BinaryTree,
     Node
