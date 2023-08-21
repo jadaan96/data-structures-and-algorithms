@@ -5,3 +5,7 @@
 
 ### tree--fizz-buzz
 ![fizz-buzz](./18.jpg)
+
+
+### tree--fizz-buzz
+![compar](./compear.jpg)
