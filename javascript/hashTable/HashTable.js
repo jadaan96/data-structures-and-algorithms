@@ -68,7 +68,7 @@ class Hashmap {
 // console.log(makeHash.hash('Waleed'))
 makeHash.set('Waleed', 'Instructor')
 makeHash.set('Aseel', 'TA')
-console.log(makeHash.keys(),"from map");
+console.log(makeHash.get("Aseel"),"from map");
 // makeHash.map.forEach((data, i) => {
 //     console.log(...data.values())
 //   });
