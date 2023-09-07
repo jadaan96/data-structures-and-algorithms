@@ -1,0 +1,1 @@
+![whitebord](./Untitled%20(17).jpg)
