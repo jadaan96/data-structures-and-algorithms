@@ -1,0 +1,1 @@
+![leftJoin](./Untitled%20(18).jpg)
