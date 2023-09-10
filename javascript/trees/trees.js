@@ -17,6 +17,17 @@ class BinaryTree {
     traversal(this.root);
     return arr;
   }
+    inOrder() {
+    let arr = [];
+    const traversal = (node) => {
+      if (node.left) traversal(node.left);
+      arr.push(node.value);
+      if (node.right) traversal(node.right);
+    };
+
+    traversal(this.root);
+    return arr;
+  }
 
   postOrder() {
     let arr = [];
@@ -30,17 +41,7 @@ class BinaryTree {
     return arr;
   }
 
-  inOrder() {
-    let arr = [];
-    const traversal = (node) => {
-      if (node.left) traversal(node.left);
-      arr.push(node.value);
-      if (node.right) traversal(node.right);
-    };
 
-    traversal(this.root);
-    return arr;
-  }
 }
 
 class BinarySearchTree extends BinaryTree {

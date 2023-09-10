@@ -9,7 +9,10 @@ class BinaryTree {
     constructor() {
       this.root = null;
     }
-  
+
+
+
+   
     findMaxValue() {
         let currentMax = null;
         let node = this.root;
@@ -38,8 +41,8 @@ class BinaryTree {
     
         let arr = [];
         let currentLevel = [this.root];
-    
         while (currentLevel.length > 0) {
+          console.log(currentLevel,"00000000");
           let nextLevel = [];
           for (let i = 0; i < currentLevel.length; i++) {
             const node = currentLevel[i];
